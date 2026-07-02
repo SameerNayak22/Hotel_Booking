@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:hotel_booking/data/best_deals.dart';
 import 'package:hotel_booking/data/places_data.dart';
 import 'package:hotel_booking/data/popular_places.dart';
+import 'package:hotel_booking/screens/trips.dart';
+import 'package:hotel_booking/screens/profile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -39,7 +41,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF121212),
-      body: ListView(
+      body: _navIndex == 0 ? ListView(
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
@@ -376,7 +378,7 @@ class _HomeState extends State<Home> {
             );
           }),
         ],
-      ),
+      ) : _navIndex == 1 ?TripsScreen() : ProfileScreen(),
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _navIndex,

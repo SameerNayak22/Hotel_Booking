@@ -6,6 +6,8 @@ class BestDeals {
       "location1": "Wembley London",
       "location2": "2.0 Km to city",
       "price": "\$180",
+      "reviews": "74 Reviews",
+      "date": "05 Jul - 09 Jul, 2 Room 3 People"
     },
     {
       "image": "assets/images/best_deal2.jpg",
@@ -13,6 +15,8 @@ class BestDeals {
       "location1": "Switzerland",
       "location2": "1.0 Km to city",
       "price": "\$330",
+      "reviews": "98 Reviews",
+      "date": "08 Jul - 09 Nov, 3 Room 3 People"
     },
     {
       "image": "assets/images/best_deal3.jpg",
@@ -20,6 +24,8 @@ class BestDeals {
       "location1": "Paris",
       "location2": "5.0 Km to city",
       "price": "\$200",
+      "reviews": "27 Reviews",
+      "date": "15 Jan - 09 Jul, 1 Room 2 People"
     },
     {
       "image": "assets/images/best_deal4.webp",
@@ -27,6 +33,8 @@ class BestDeals {
       "location1": "Spain",
       "location2": "1.0 Km to city",
       "price": "\$120",
+      "reviews": "133 Reviews",
+      "date": "02 Feb - 28 May, 2 Room 3 People"
     },
     {
       "image": "assets/images/best_deal5.jpg",
@@ -34,6 +42,8 @@ class BestDeals {
       "location1": "Calefornia",
       "location2": "7 Km to city",
       "price": "\$220",
+      "reviews": "56 Reviews",
+      "date": "05 Jul - 09 Jul, 2 Room 4 People"
     },
   ];
 }
