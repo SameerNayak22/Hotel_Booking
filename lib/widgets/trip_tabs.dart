@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TripTabs extends StatefulWidget {
-  TripTabs({super.key});
+  final Function(int) onTabChanged;
+  TripTabs({super.key, required this.onTabChanged});
 
   State<TripTabs> createState() => _TripTabsState();
 }
@@ -26,14 +27,16 @@ class _TripTabsState extends State<TripTabs> {
               onTap: () {
                 selectedIndex = index;
                 setState(() {});
+                widget.onTabChanged(selectedIndex);
               },
               child: Center(
                 child: Text(
                   tabs[index],
                   style: TextStyle(
                     color: isSelected ? Colors.tealAccent : Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
               ),
             ),

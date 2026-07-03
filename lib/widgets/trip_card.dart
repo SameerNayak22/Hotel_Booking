@@ -82,9 +82,14 @@ Widget tripCard(Map trip) {
                             size: 16,
                             color: Colors.tealAccent,
                           ),
-                          Text(
-                            trip["location2"],
-                            style: TextStyle(color: Colors.grey),
+                          SizedBox(
+                            width: 80,
+                            child: Text(
+                              trip["location2"],
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(color: Colors.grey),
+                            ),
                           ),
                           Spacer(),
                           Text(
