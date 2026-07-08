@@ -6,31 +6,43 @@ class AllReviews extends StatelessWidget {
   AllReviews({super.key});
 
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsGeometry.all(30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(Icons.close, color: Colors.white),
-          Text(
-            "Review(${Review.reviews.length})",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsetsGeometry.only(top: 10,bottom: 20,left: 20,right: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.arrow_back, color: Colors.white,size: 28,),
+                  SizedBox(width: 20,),
+                  Text(
+                    "Review(${Review.reviews.length})",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                    ),
+                  ),
+                ],
+              ),
 
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: Review.reviews.length,
-              itemBuilder: (context, index) {
-                return review(context, index);
-              },
-            ),
+              SizedBox(height: 30,),
+
+              Expanded(
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: Review.reviews.length,
+                  itemBuilder: (context, index) {
+                    return review(context, index);
+                  },
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

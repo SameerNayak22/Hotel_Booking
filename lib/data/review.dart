@@ -2,7 +2,7 @@ class Review {
   static List<Map<String, dynamic>> reviews = [
     {
       "name": "Alexia Jane",
-      "image": "assets/images/profile_pic4.webp",
+      "image": "assets/images/profile_pic4.jpg",
       "last_update": "Last Update 21 May, 2019",
       "description":
           "This is located in a great spot close to shops and bars, very quit location,My opinion is this hotel is very heart toching and their staff also.",
@@ -29,7 +29,7 @@ class Review {
 
     {
       "name": "Joseph",
-      "image": "assets/images/profile_pic.jpg",
+      "image": "assets/images/profile_pic.webp",
       "last_update": "Last Update 6 May, 2019",
       "description":
           "This is located in a great spot close to shops and bars, very quit location",
@@ -47,7 +47,7 @@ class Review {
 
     {
       "name": "Natasha",
-      "image": "assets/images/profile_pic2.webp",
+      "image": "assets/images/profile_pic2.jpg",
       "last_update": "Last Update 5 December, 2019",
       "description":
           "This is located in a great spot close to shops and bars, very quit location,, very quit location,My opinion is this hotel is very heart toching and their staff also.",
