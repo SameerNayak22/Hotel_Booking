@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/screens/all_reviews.dart';
 import 'package:hotel_booking/screens/home.dart';
 import 'package:hotel_booking/screens/sliver_screen.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => Home(),
-        //"/sliver_screen": (context) => SliverScreen(),
+        "/all_review": (context) => AllReviews(),
       },
     );
   }

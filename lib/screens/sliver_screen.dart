@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/data/best_deals.dart';
+import 'package:hotel_booking/screens/all_reviews.dart';
 import 'package:hotel_booking/widgets/rating_element.dart';
 import 'package:hotel_booking/widgets/review.dart';
 import 'package:hotel_booking/widgets/sliver_hotel_infocard.dart';
@@ -113,24 +114,23 @@ class _SliverScreen extends State<SliverScreen> {
                         child: Container(
                           height: 40,
                           width: 80,
-                          
-                            child: Padding(
-                              padding: const EdgeInsets.all(2.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "More Details",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Icon(
-                                    Icons.keyboard_arrow_down,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
+
+                          child: Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "More Details",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Icon(
+                                  Icons.keyboard_arrow_down,
+                                  color: Colors.white,
+                                ),
+                              ],
                             ),
-                          
+                          ),
                         ),
                       ),
                     ),
@@ -263,9 +263,21 @@ class _SliverScreen extends State<SliverScreen> {
 
                   Row(
                     children: [
-                      Text("Photo", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                      Text(
+                        "Photo",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       Spacer(),
-                      Text("View all", style: TextStyle(color: Colors.teal,fontWeight: FontWeight.bold)),
+                      Text(
+                        "View all",
+                        style: TextStyle(
+                          color: Colors.teal,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       Icon(Icons.arrow_forward, color: Colors.teal),
                     ],
                   ),
@@ -299,10 +311,42 @@ class _SliverScreen extends State<SliverScreen> {
 
                   Row(
                     children: [
-                      Text("Reviews", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                      Text(
+                        "Reviews",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       Spacer(),
-                      Text("View all", style: TextStyle(color: Colors.teal,fontWeight: FontWeight.bold)),
-                      Icon(Icons.arrow_forward, color: Colors.teal),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AllReviews(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "View all",
+                          style: TextStyle(
+                            color: Colors.teal,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AllReviews(),
+                            ),
+                          );
+                        },
+                        child: Icon(Icons.arrow_forward, color: Colors.teal),
+                      ),
                     ],
                   ),
                   SizedBox(height: 20),
