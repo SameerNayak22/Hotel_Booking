@@ -16,7 +16,9 @@ class AllReviews extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.arrow_back, color: Colors.white,size: 28,),
+                  InkWell(onTap: () {
+                    Navigator.pop(context);
+                  },child: Icon(Icons.arrow_back, color: Colors.white,size: 28,)),
                   SizedBox(width: 20,),
                   Text(
                     "Review(${Review.reviews.length})",

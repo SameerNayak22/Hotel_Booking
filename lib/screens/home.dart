@@ -417,7 +417,9 @@ class _HomeState extends State<Home> {
         selectedItemColor: Colors.tealAccent,
         unselectedItemColor: Colors.grey,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Explore"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: "Explore"),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
             label: "Trips",
