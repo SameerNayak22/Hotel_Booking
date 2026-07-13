@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/data/best_deals.dart';
-import 'package:hotel_booking/provider/sliver_screen_provider.dart';
+import 'package:hotel_booking/view_model/sliver_screen_provider.dart';
 import 'package:hotel_booking/screens/all_reviews.dart';
 import 'package:hotel_booking/widgets/rating_element.dart';
 import 'package:hotel_booking/widgets/review.dart';
@@ -24,17 +24,20 @@ class _SliverScreen extends State<SliverScreen> {
 
   Widget build(BuildContext context) {
     final provider = context.watch<SliverScreenProvider>();
-    return Scaffold(
+    double bodyHeight = (MediaQuery.of(context).size.height) - kToolbarHeight;
+    return Scaffold(  
+
       body: NotificationListener<ScrollNotification>(
         onNotification: (scroll) {
           bool Collapsed =
-              scroll.metrics.pixels >
-              (MediaQuery.of(context).size.height) - kToolbarHeight;
+              scroll.metrics.pixels >= bodyHeight;
+              
           provider.updateCollapsed(Collapsed);
 
           return false;
         },
         child: CustomScrollView(
+          controller: provider.controller,
           slivers: [
             SliverAppBar(
               expandedHeight: MediaQuery.of(context).size.height,
@@ -160,20 +163,25 @@ class _SliverScreen extends State<SliverScreen> {
                             height: 40,
                             width: 80,
 
-                            child: Padding(
-                              padding: const EdgeInsets.all(2.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "More Details",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Icon(
-                                    Icons.keyboard_arrow_down,
-                                    color: Colors.white,
-                                  ),
-                                ],
+                            child: InkWell(
+                              onTap: () {
+                                provider.collapsedAppbar(bodyHeight);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "More Details",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Icon(
+                                      Icons.keyboard_arrow_down,
+                                      color: Colors.white,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

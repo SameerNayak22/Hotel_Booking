@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      //backgroundColor: Color(0xFF121212),
       body: _navIndex == 0
           ? ListView(
               padding: EdgeInsets.zero,
@@ -179,7 +179,7 @@ class _HomeState extends State<Home> {
                   child: Text(
                     "Popular Destination",
                     style: TextStyle(
-                      color: Colors.white,
+                      //color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -245,7 +245,7 @@ class _HomeState extends State<Home> {
                       Text(
                         "Best Deals",
                         style: TextStyle(
-                          color: Colors.white,
+                          //color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -254,11 +254,11 @@ class _HomeState extends State<Home> {
                         children: [
                           Text(
                             "View all",
-                            style: TextStyle(color: Colors.tealAccent),
+                            //style: TextStyle(color: Colors.tealAccent),
                           ),
                           Icon(
                             Icons.arrow_forward,
-                            color: Colors.tealAccent,
+                            //color: Colors.tealAccent,
                             size: 16,
                           ),
                         ],

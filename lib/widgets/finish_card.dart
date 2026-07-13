@@ -29,19 +29,19 @@ Widget finishCard(Map trip) {
           Text(
             trip["name"],
             style: const TextStyle(
-              color: Colors.white,
+              //color: Colors.white,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             trip["location1"],
-            style: const TextStyle(color: Colors.grey, fontSize: 12),
+            style: const TextStyle(fontSize: 12),
           ),
           Text(
             trip["date"],
             textAlign: imageLeft ? TextAlign.left : TextAlign.right,
-            style: const TextStyle(color: Colors.white, fontSize: 12),
+            style: const TextStyle(fontSize: 12),
           ),
 
           Row(
@@ -52,7 +52,7 @@ Widget finishCard(Map trip) {
               Icon(Icons.location_on, color: Colors.tealAccent, size: 15),
               Text(
                 trip["location2"],
-                style: const TextStyle(color: Colors.grey, fontSize: 12),
+                style: const TextStyle(fontSize: 12),
               ),
             ],
           ),
@@ -77,11 +77,10 @@ Widget finishCard(Map trip) {
               Text(
                 trip["price"],
                 style: TextStyle(
-                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text("/per night", style: TextStyle(color: Colors.grey)),
+              Text("/per night"),
             ],
           ),
         ],

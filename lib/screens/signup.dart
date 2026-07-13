@@ -292,7 +292,7 @@ class Signup extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              "Login",
+                              "Signup",
                               style: TextStyle(color: Colors.white),
                             ),
                           ),

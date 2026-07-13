@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/data/profile_Data.dart';
+import 'package:hotel_booking/screens/profile_item.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({super.key});
@@ -10,10 +11,9 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      //backgroundColor: Color(0xFF121212),
       body: Padding(
-        
-        padding: EdgeInsets.only(top: 80,right: 25,left: 25,bottom: 25),
+        padding: EdgeInsets.only(top: 80, right: 25, left: 25, bottom: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -26,7 +26,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       "Kartik",
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                        color: Colors.white,
+                        //color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 34,
                       ),
@@ -34,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                     Text(
                       "View and Edit profile",
-                      style: TextStyle(color: Colors.grey, fontSize: 18),
+                      style: TextStyle(fontSize: 18),
                     ),
                   ],
                 ),
@@ -51,24 +51,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 padding: EdgeInsets.only(top: 40),
                 child: Column(
                   children: List.generate(profileItem.length, ((index) {
-                    return Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          child: Row(
-                            children: [
-                              Text(
-                                profileItem[index]["title"],
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              Spacer(),
-                              Icon(profileItem[index]["icon"],color: Colors.grey,),
-                            ],
+                    return GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProfileItemScreen(
+                              screenTitle: profileItem[index]["title"],
+                            ),
                           ),
-                        ),
-                
-                        Divider(thickness: 1, color: Colors.grey.shade800),
-                      ],
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            child: Row(
+                              children: [
+                                Text(
+                                  profileItem[index]["title"],
+                                ),
+                                Spacer(),
+                                Icon(
+                                  profileItem[index]["icon"],
+                                  //color: Colors.grey,
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Divider(thickness: 1, color: Colors.grey.shade800),
+                        ],
+                      ),
                     );
                   })),
                 ),

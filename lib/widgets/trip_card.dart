@@ -4,7 +4,7 @@ Widget tripCard(Map trip) {
   return Container(
     child: Column(
       children: [
-        Text(trip["date"], style: TextStyle(color: Colors.white, fontSize: 14)),
+        Text(trip["date"], style: TextStyle(fontSize: 14)),
         SizedBox(height: 12),
         Padding(
           padding: EdgeInsetsGeometry.only(right: 20, left: 20),

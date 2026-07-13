@@ -15,7 +15,7 @@ class _TripsScreenState extends State<TripsScreen> {
   int selectedIndex = 0;
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      //backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Column(
           children: [
@@ -29,7 +29,7 @@ class _TripsScreenState extends State<TripsScreen> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      //color: Colors.white,
                     ),
                   ),
                   SizedBox(height: 20),
