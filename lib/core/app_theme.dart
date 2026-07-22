@@ -30,4 +30,6 @@ class AppTheme {
       bodyMedium: TextStyle(color: Colors.white70),
     ),
   );
+
+  static Color primaryColor = Color(0xffF0B626);
 }

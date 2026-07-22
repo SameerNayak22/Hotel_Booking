@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/core/app_theme.dart';
 import 'package:hotel_booking/data/best_deals.dart';
 import 'package:hotel_booking/data/places_data.dart';
 import 'package:hotel_booking/data/popular_places.dart';
@@ -84,29 +85,54 @@ class _HomeState extends State<Home> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(height: 15),
-                                  Container(
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      color: Color(0xff383838),
-                                    ),
-                                    child: TextField(
-                                      style: TextStyle(color: Colors.white),
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        prefixIcon: Icon(
-                                          Icons.search,
-                                          color: Colors.tealAccent,
-                                        ),
-                                        hintText: "Where are you going?",
-                                        hintStyle: TextStyle(
-                                          color: Colors.grey,
-                                        ),
-                                        contentPadding: EdgeInsets.symmetric(
-                                          vertical: 14,
+                                  Row(
+                                    children: [
+                                      InkWell
+                                      (onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                        child: CircleAvatar(
+                                          child: Icon(
+                                            Icons.arrow_back,
+                                            size: 25,
+                                            color: Colors.white,
+                                          ),
+                                          backgroundColor: Color(0xff383838),
                                         ),
                                       ),
-                                    ),
+                                      SizedBox(width: 10),
+                                      Expanded(
+                                        child: Container(
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              30,
+                                            ),
+                                            color: Color(0xff383838),
+                                          ),
+                                          child: TextField(
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                            decoration: InputDecoration(
+                                              border: InputBorder.none,
+                                              prefixIcon: Icon(
+                                                Icons.search,
+                                                color: Colors.white,
+                                              ),
+                                              hintText: "Where are you going?",
+                                              hintStyle: TextStyle(
+                                                color: Colors.grey,
+                                              ),
+                                              contentPadding:
+                                                  EdgeInsets.symmetric(
+                                                    vertical: 14,
+                                                  ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
 
                                   Spacer(),
@@ -134,7 +160,7 @@ class _HomeState extends State<Home> {
                                     children: [
                                       ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.teal,
+                                          backgroundColor: AppTheme.primaryColor,
                                           padding: EdgeInsets.symmetric(
                                             horizontal: 20,
                                             vertical: 10,
@@ -272,131 +298,130 @@ class _HomeState extends State<Home> {
 
                   return GestureDetector(
                     onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return SliverScreen(deal: deal,);
-                            },
-                          ),
-                        );
-                      },
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return SliverScreen(deal: deal);
+                          },
+                        ),
+                      );
+                    },
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(20, 0, 20, 16),
-                        
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xff2A2A2A),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Row(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadiusGeometry.horizontal(
-                                  left: Radius.circular(16),
-                                ),
-                                child: Image.asset(
-                                  deal["image"],
-                                  height: 110,
-                                  width: 120,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              SizedBox(width: 12),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      deal["name"],
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      deal["location1"],
-                                      style: TextStyle(color: Colors.grey),
-                                    ),
-                                    SizedBox(height: 14),
-                                    Padding(
-                                      padding: EdgeInsetsGeometry.only(right: 10),
-                                      child: Row(
-                                        children: [
-                                          Icon(
-                                            Icons.location_on,
-                                            size: 14,
-                                            color: Colors.tealAccent,
-                                          ),
-                                          SizedBox(width: 3),
-                                          Text(
-                                            deal["location2"],
-                                            style: TextStyle(
-                                              color: Colors.grey,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          Spacer(),
-                                          Text(
-                                            deal["price"],
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                    
-                                    Padding(
-                                      padding: EdgeInsets.only(right: 10),
-                                      child: Row(
-                                        children: [
-                                          Icon(
-                                            Icons.star,
-                                            size: 14,
-                                            color: Colors.tealAccent,
-                                          ),
-                                          Icon(
-                                            Icons.star,
-                                            size: 14,
-                                            color: Colors.tealAccent,
-                                          ),
-                                          Icon(
-                                            Icons.star,
-                                            size: 14,
-                                            color: Colors.tealAccent,
-                                          ),
-                                          Icon(
-                                            Icons.star,
-                                            size: 14,
-                                            color: Colors.tealAccent,
-                                          ),
-                                          Icon(
-                                            Icons.star_half,
-                                            size: 14,
-                                            color: Colors.tealAccent,
-                                          ),
-                                          Spacer(),
-                                          Text(
-                                            "/per night",
-                                            style: TextStyle(
-                                              color: Colors.grey,
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff2A2A2A),
+                          borderRadius: BorderRadius.circular(16),
                         ),
-                      
+                        child: Row(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadiusGeometry.horizontal(
+                                left: Radius.circular(16),
+                              ),
+                              child: Image.asset(
+                                deal["image"],
+                                height: 110,
+                                width: 120,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    deal["name"],
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    deal["location1"],
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
+                                  SizedBox(height: 14),
+                                  Padding(
+                                    padding: EdgeInsetsGeometry.only(right: 10),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.location_on,
+                                          size: 14,
+                                          color: Colors.tealAccent,
+                                        ),
+                                        SizedBox(width: 3),
+                                        Text(
+                                          deal["location2"],
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          deal["price"],
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: EdgeInsets.only(right: 10),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          size: 14,
+                                          color: Colors.tealAccent,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          size: 14,
+                                          color: Colors.tealAccent,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          size: 14,
+                                          color: Colors.tealAccent,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          size: 14,
+                                          color: Colors.tealAccent,
+                                        ),
+                                        Icon(
+                                          Icons.star_half,
+                                          size: 14,
+                                          color: Colors.tealAccent,
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          "/per night",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   );
                 }),
@@ -408,18 +433,15 @@ class _HomeState extends State<Home> {
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _navIndex,
-        backgroundColor: Color(0xFF121212),
+        selectedItemColor: AppTheme.primaryColor,
         onTap: (value) {
           setState(() {
             _navIndex = value;
           });
         },
-        selectedItemColor: Colors.tealAccent,
-        unselectedItemColor: Colors.grey,
+        
         items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: "Explore"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Explore"),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
             label: "Trips",

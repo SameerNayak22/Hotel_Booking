@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/screens/dashboard.dart';
 import 'package:hotel_booking/screens/home.dart';
 import 'package:hotel_booking/screens/login.dart';
 
@@ -20,20 +21,6 @@ class Signup extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => Login()),
-                  );
-                },
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                  size: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               SizedBox(height: 10),
               Text(
                 "Sign up",
@@ -280,7 +267,7 @@ class Signup extends StatelessWidget {
                         onTap: () {
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context) => Home()),
+                            MaterialPageRoute(builder: (context) => Dashboard()),
                           );
                         },
                         child: Container(

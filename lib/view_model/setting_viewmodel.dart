@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_theme.dart';
 
 class SettingViewmodel extends ChangeNotifier{
-bool _isdark =true;
+bool _isdark =false;
 
 ThemeMode get themeMode => _isdark?ThemeMode.dark:ThemeMode.light;
 

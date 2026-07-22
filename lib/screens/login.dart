@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/screens/dashboard.dart';
 import 'package:hotel_booking/screens/home.dart';
+import 'package:hotel_booking/screens/signup.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -20,7 +22,20 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.arrow_back, color: Colors.white, size: 25,fontWeight: FontWeight.bold,),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => Signup()),
+                      );
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     "Login",
@@ -30,9 +45,9 @@ class Login extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-              
+
                   SizedBox(height: 30),
-              
+
                   Row(
                     children: [
                       Expanded(
@@ -49,7 +64,9 @@ class Login extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset("assets/icons/facebook.png"),
+                                  child: Image.asset(
+                                    "assets/icons/facebook.png",
+                                  ),
                                 ),
                                 Text(
                                   "Facebook",
@@ -60,9 +77,9 @@ class Login extends StatelessWidget {
                           ),
                         ),
                       ),
-              
+
                       SizedBox(width: 20),
-              
+
                       Expanded(
                         child: Container(
                           height: 40,
@@ -77,7 +94,9 @@ class Login extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset("assets/icons/twitter.png"),
+                                  child: Image.asset(
+                                    "assets/icons/twitter.png",
+                                  ),
                                 ),
                                 Text(
                                   "Twitter",
@@ -90,19 +109,19 @@ class Login extends StatelessWidget {
                       ),
                     ],
                   ),
-              
+
                   SizedBox(height: 20),
-              
+
                   Center(
                     child: Text(
                       "Or log in with email",
                       style: TextStyle(color: Colors.grey),
                     ),
                   ),
-                  Divider(color: Colors.grey,thickness: 1,),
-              
-                  SizedBox(height: 20,),
-              
+                  Divider(color: Colors.grey, thickness: 1),
+
+                  SizedBox(height: 20),
+
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
@@ -110,7 +129,7 @@ class Login extends StatelessWidget {
                       style: TextStyle(color: Colors.grey, fontSize: 12),
                     ),
                   ),
-              
+
                   TextField(
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -136,9 +155,9 @@ class Login extends StatelessWidget {
                       ),
                     ),
                   ),
-              
+
                   SizedBox(height: 30),
-              
+
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
@@ -146,7 +165,7 @@ class Login extends StatelessWidget {
                       style: TextStyle(color: Colors.grey, fontSize: 12),
                     ),
                   ),
-              
+
                   TextField(
                     style: TextStyle(color: Colors.white),
                     obscureText: true,
@@ -173,9 +192,9 @@ class Login extends StatelessWidget {
                       ),
                     ),
                   ),
-              
-                  SizedBox(height: 20,),
-              
+
+                  SizedBox(height: 20),
+
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Text(
@@ -183,14 +202,14 @@ class Login extends StatelessWidget {
                       style: TextStyle(color: Colors.grey),
                     ),
                   ),
-              
+
                   SizedBox(height: 40),
-              
+
                   GestureDetector(
                     onTap: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()),
+                        MaterialPageRoute(builder: (context) => Dashboard()),
                       );
                     },
                     child: Container(
@@ -201,7 +220,13 @@ class Login extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: Center(
-                        child: Text("Login", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                   ),
