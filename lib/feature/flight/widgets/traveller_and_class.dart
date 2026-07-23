@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_theme.dart';
-import 'package:hotel_booking/feature/flight/view_model/flight_home_viewmodel.dart';
+import 'package:hotel_booking/feature/flight/view_model/oneway_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class TravellerAndClass extends StatefulWidget {
@@ -11,7 +11,7 @@ class TravellerAndClass extends StatefulWidget {
 
 class _TravellerAndClassState extends State<TravellerAndClass> {
   Widget build(BuildContext context) {
-    return Consumer<FlightHomeViewmodel>(
+    return Consumer<OnewayViewmodel>(
       builder: (context, value, child) => Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -34,7 +34,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
               ),
               Text("ADD NUMBERS OF TRAVELLERS"),
 
-              Divider(color: Colors.grey),
+              Divider(color: Colors.grey.shade300),
 
               SizedBox(height: 10),
 
@@ -57,23 +57,33 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                     height: 40,
                     width: 80,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: Colors.grey.shade300),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.remove),
+                        InkWell(
+                          onTap: () {
+                            value.decrement(1);
+                          },
+                          child: Icon(Icons.remove,color: Colors.grey,),
+                        ),
                         Spacer(),
                         Text(
-                          "1",
+                          value.adult.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
                         Spacer(),
-                        Icon(Icons.add),
+                        InkWell(
+                          onTap: () {
+                            value.increment(1);
+                          },
+                          child: Icon(Icons.add,color: Colors.grey,),
+                        ),
                       ],
                     ),
                   ),
@@ -81,7 +91,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
               ),
 
               SizedBox(height: 5),
-              Divider(color: Colors.grey),
+              Divider(color: Colors.grey.shade300),
 
               SizedBox(height: 5),
 
@@ -90,7 +100,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                   Column(
                     children: [
                       Text(
-                        "Adult 12 yrs & above",
+                        "Children 2-12 yrs",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       Text("on the day of travel"),
@@ -103,23 +113,33 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                     height: 40,
                     width: 80,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: Colors.grey.shade300),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.remove),
+                        InkWell(
+                          onTap: () {
+                            value.decrement(2);
+                          },
+                          child: Icon(Icons.remove),
+                        ),
                         Spacer(),
                         Text(
-                          "1",
+                          value.children.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
                         Spacer(),
-                        Icon(Icons.add),
+                        InkWell(
+                          onTap: () {
+                            value.increment(2);
+                          },
+                          child: Icon(Icons.add),
+                        ),
                       ],
                     ),
                   ),
@@ -128,7 +148,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
 
               SizedBox(height: 5),
 
-              Divider(color: Colors.grey),
+              Divider(color: Colors.grey.shade300),
 
               SizedBox(height: 5),
               Row(
@@ -136,7 +156,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                   Column(
                     children: [
                       Text(
-                        "Adult 12 yrs & above",
+                        "Infant under 2 yrs",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       Text("on the day of travel"),
@@ -149,23 +169,33 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                     height: 40,
                     width: 80,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
+                      border: Border.all(color: Colors.grey.shade300),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.remove),
+                        InkWell(
+                          onTap: () {
+                            value.decrement(3);
+                          },
+                          child: Icon(Icons.remove),
+                        ),
                         Spacer(),
                         Text(
-                          "1",
+                          value.infant.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
                         Spacer(),
-                        Icon(Icons.add),
+                        InkWell(
+                          onTap: () {
+                            value.increment(3);
+                          },
+                          child: Icon(Icons.add),
+                        ),
                       ],
                     ),
                   ),
@@ -177,45 +207,47 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
               Text("CHOOSE CABIN CLASS"),
               SizedBox(height: 10),
 
-              InkWell(
-                onTap: () {
-                  value.chooseCabin(0);
-                },
-                child: Container(
-                  height: 40,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: (value.selectedCabin == 0)
-                          ? AppTheme.primaryColor
-                          : Colors.grey,
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Economy/Premium Economy",
-                      style: TextStyle(
-                        color: (value.selectedCabin == 0)
-                            ? AppTheme.primaryColor
-                            : Theme.of(context).textTheme.bodyMedium?.color,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
 
-              SizedBox(height: 10),
 
               Row(
                 children: [
+                  InkWell(
+                    onTap: () {
+                      value.chooseCabin(0);
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 135,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: (value.selectedCabin == 0)
+                              ? AppTheme.primaryColor
+                              : Colors.grey,
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Premium Economy",
+                          style: TextStyle(
+                            color: (value.selectedCabin == 0)
+                                ? AppTheme.primaryColor
+                                : Theme.of(context).textTheme.bodyMedium?.color,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Spacer(),
+
                   InkWell(
                     onTap: () {
                       value.chooseCabin(1);
                     },
                     child: Container(
                       height: 40,
-                      width: 140,
+                      width: 135,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
@@ -226,7 +258,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                       ),
                       child: Center(
                         child: Text(
-                          "Premium Economy",
+                          "Economy Class",
                           style: TextStyle(
                             color: (value.selectedCabin == 1)
                                 ? AppTheme.primaryColor
@@ -236,8 +268,42 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                       ),
                     ),
                   ),
+                ],
+              ),
 
-                  SizedBox(width: 10),
+              SizedBox(height: 10,),
+
+              Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      value.chooseCabin(3);
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 135,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: (value.selectedCabin == 3)
+                              ? AppTheme.primaryColor
+                              : Colors.grey,
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "First Class",
+                          style: TextStyle(
+                            color: (value.selectedCabin == 3)
+                                ? AppTheme.primaryColor
+                                : Theme.of(context).textTheme.bodyMedium?.color,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Spacer(),
 
                   InkWell(
                     onTap: () {
@@ -245,7 +311,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                     },
                     child: Container(
                       height: 40,
-                      width: 120,
+                      width: 135,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
@@ -269,38 +335,9 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                 ],
               ),
 
-              SizedBox(height: 10),
-
-              InkWell(
-                onTap: () {
-                  value.chooseCabin(3);
-                },
-                child: Container(
-                  height: 40,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: (value.selectedCabin == 3)
-                          ? AppTheme.primaryColor
-                          : Colors.grey,
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "First Class",
-                      style: TextStyle(
-                        color: (value.selectedCabin == 3)
-                            ? AppTheme.primaryColor
-                            : Theme.of(context).textTheme.bodyMedium?.color,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
               
 
+              SizedBox(height: 10),
             ],
           ),
         ),

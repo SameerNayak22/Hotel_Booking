@@ -39,7 +39,10 @@ class _DashbordState extends State<Dashboard> {
                ),
               
               SizedBox(height: 10),
-              DashboardOfferforyou(),
+              Padding(
+                padding: const EdgeInsets.only(left: 12),
+                child: DashboardOfferforyou(),
+              ),
             ],
           ),
         ):ProfileScreen(),

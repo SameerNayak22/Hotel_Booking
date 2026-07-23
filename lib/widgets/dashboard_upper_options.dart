@@ -78,9 +78,10 @@ Widget dashboardUpperOptions(context) {
                     elevation: 6,
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
-                      height: 100,
-                      decoration: BoxDecoration(
+                      height: 102,
+                      decoration: BoxDecoration(color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Color(0xffF0B626)),
                       ),
                       child: Center(
                         child: Padding(
@@ -97,9 +98,10 @@ Widget dashboardUpperOptions(context) {
                                 "Hotels",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Theme.of(
+                                  color: Colors.black,
+                                  /*color: Theme.of(
                                     context,
-                                  ).textTheme.bodyLarge?.color,
+                                  ).textTheme.bodyLarge?.color,*/
                                 ),
                               ),
                             ],
@@ -123,9 +125,10 @@ Widget dashboardUpperOptions(context) {
                     elevation: 6,
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
-                      height: 100,
-                      decoration: BoxDecoration(
+                      height: 102,
+                      decoration: BoxDecoration(color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Color(0xffF0B626)),
                       ),
                       child: Center(
                         child: Padding(
@@ -140,7 +143,7 @@ Widget dashboardUpperOptions(context) {
                               SizedBox(height: 10),
                               Text(
                                 "Flights",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,),
                               ),
                             ],
                           ),
@@ -156,9 +159,10 @@ Widget dashboardUpperOptions(context) {
                   elevation: 6,
                   borderRadius: BorderRadius.circular(10),
                   child: Container(
-                    height: 100,
-                    decoration: BoxDecoration(
+                    height: 102,
+                    decoration: BoxDecoration(color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xffF0B626)),
                     ),
                     child: Center(
                       child: Padding(
@@ -173,7 +177,7 @@ Widget dashboardUpperOptions(context) {
                             SizedBox(height: 10),
                             Text(
                               "Trains",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,),
                             ),
                           ],
                         ),
@@ -188,9 +192,11 @@ Widget dashboardUpperOptions(context) {
                   elevation: 6,
                   borderRadius: BorderRadius.circular(10),
                   child: Container(
-                    height: 100,
+                    height: 102,
                     decoration: BoxDecoration(
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xffF0B626)),
                     ),
                     child: Center(
                       child: Padding(
@@ -205,7 +211,7 @@ Widget dashboardUpperOptions(context) {
                             SizedBox(height: 10),
                             Text(
                               "Bus",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,),
                             ),
                           ],
                         ),
@@ -230,9 +236,11 @@ Widget dashboardUpperOptions(context) {
                   elevation: 6,
                   borderRadius: BorderRadius.circular(10),
                   child: Container(
-                    height: 100,
+                    height: 102,
                     decoration: BoxDecoration(
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xffF0B626)),
                     ),
                     child: Center(
                       child: Padding(
@@ -247,7 +255,7 @@ Widget dashboardUpperOptions(context) {
                             SizedBox(height: 10),
                             Text(
                               "Food",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,),
                             ),
                           ],
                         ),
@@ -262,9 +270,11 @@ Widget dashboardUpperOptions(context) {
                   elevation: 6,
                   borderRadius: BorderRadius.circular(10),
                   child: Container(
-                    height: 100,
+                    height: 102,
                     decoration: BoxDecoration(
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xffF0B626)),
                     ),
                     child: Center(
                       child: Padding(
@@ -279,7 +289,7 @@ Widget dashboardUpperOptions(context) {
                             SizedBox(height: 10),
                             Text(
                               "Grocery",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,),
                             ),
                           ],
                         ),

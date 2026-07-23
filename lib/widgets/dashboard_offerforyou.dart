@@ -14,19 +14,15 @@ class _DashboardOfferforyouState extends State<DashboardOfferforyou> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 12),
-            child: Text(
+          Text(
               "Offers For You",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-          ),
+          
 
           SizedBox(height: 10),
 
-          Padding(
-            padding: const EdgeInsets.only(left: 12),
-            child: SizedBox(
+          SizedBox(
               height: 210,
               child: ListView.builder(
                 itemCount: 5,
@@ -71,7 +67,6 @@ class _DashboardOfferforyouState extends State<DashboardOfferforyou> {
                 },
               ),
             ),
-          ),
         ],
       ),
     );
