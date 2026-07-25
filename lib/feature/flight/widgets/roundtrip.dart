@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_theme.dart';
+import 'package:hotel_booking/feature/flight/screens/flight_search.dart';
 import 'package:hotel_booking/feature/flight/widgets/traveller_and_class.dart';
 import 'package:hotel_booking/widgets/dashboard_offerforyou.dart';
 
@@ -215,19 +216,26 @@ class _RoundtripState extends State<Roundtrip> {
       
             SizedBox(height: 20),
       
-            Padding(
-              padding: const EdgeInsets.only(left: 15,right: 15),
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppTheme.primaryColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    "Search Flights",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+            InkWell(onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FlightSearch()),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15,right: 15),
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppTheme.primaryColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Search Flights",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),

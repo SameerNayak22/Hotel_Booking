@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_theme.dart';
+import 'package:hotel_booking/feature/flight/screens/flight_search.dart';
 import 'package:hotel_booking/feature/flight/view_model/multicity_viewmodel.dart';
 import 'package:hotel_booking/feature/flight/widgets/traveller_and_class.dart';
 import 'package:hotel_booking/widgets/dashboard_offerforyou.dart';
@@ -20,7 +21,7 @@ class _MulticityState extends State<Multicity> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Row(
                   children: [
                     //first box
@@ -64,7 +65,10 @@ class _MulticityState extends State<Multicity> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("TO", style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(
+                          "TO",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         SizedBox(height: 5),
                         Container(
                           width: 100,
@@ -138,7 +142,7 @@ class _MulticityState extends State<Multicity> {
 
               //secaond row
               Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Row(
                   children: [
                     Container(
@@ -167,9 +171,9 @@ class _MulticityState extends State<Multicity> {
                         ),
                       ),
                     ),
-                
+
                     Spacer(),
-                
+
                     Container(
                       width: 100,
                       height: 55,
@@ -198,7 +202,7 @@ class _MulticityState extends State<Multicity> {
                         ),
                       ),
                     ),
-                
+
                     Spacer(),
                     Container(
                       width: 100,
@@ -236,13 +240,12 @@ class _MulticityState extends State<Multicity> {
 
               Column(children: value.city),
 
-
               SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: InkWell(
                   onTap: () {
-                    if (value.city.length<3) {
+                    if (value.city.length < 3) {
                       value.addCity();
                     }
                   },
@@ -263,40 +266,48 @@ class _MulticityState extends State<Multicity> {
                 ),
               ),
 
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
 
               Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: TravellerAndClass(),
               ),
 
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
 
-              Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
-                child: Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppTheme.primaryColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    "Search Flights",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FlightSearch()),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15),
+                  child: Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: AppTheme.primaryColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Search Flights",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                 ),
-                            ),
               ),
 
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 15,right: 15),
-              child: DashboardOfferforyou(),
-            ),
-            SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15),
+                child: DashboardOfferforyou(),
+              ),
+              SizedBox(height: 20),
             ],
           ),
         ),

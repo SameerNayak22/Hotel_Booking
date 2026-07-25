@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/core/app_theme.dart';
+import 'package:hotel_booking/feature/flight/screens/flight_search.dart';
 import 'package:hotel_booking/feature/flight/widgets/traveller_and_class.dart';
 import 'package:hotel_booking/widgets/dashboard_offerforyou.dart';
 
@@ -12,13 +13,13 @@ class Oneway extends StatefulWidget {
 class _OnewayState extends State<Oneway> {
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top:20),
+      padding: const EdgeInsets.only(top: 20),
       child: SingleChildScrollView(
         child: Column(
           children: [
             //first row
             Padding(
-              padding: const EdgeInsets.only(left: 15,right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15),
               child: Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -59,9 +60,9 @@ class _OnewayState extends State<Oneway> {
                           ),
                         ),
                       ),
-              
+
                       SizedBox(width: 8),
-              
+
                       Expanded(
                         child: Container(
                           height: 75,
@@ -99,7 +100,7 @@ class _OnewayState extends State<Oneway> {
                       ),
                     ],
                   ),
-              
+
                   Positioned(
                     top: 20,
                     right: 0,
@@ -120,12 +121,12 @@ class _OnewayState extends State<Oneway> {
                 ],
               ),
             ),
-      
+
             SizedBox(height: 10),
-      
+
             //second row
             Padding(
-              padding: const EdgeInsets.only(left: 15,right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15),
               child: Row(
                 children: [
                   Expanded(
@@ -163,9 +164,9 @@ class _OnewayState extends State<Oneway> {
                       ),
                     ),
                   ),
-              
+
                   SizedBox(width: 8),
-              
+
                   Expanded(
                     child: Container(
                       height: 60,
@@ -203,42 +204,50 @@ class _OnewayState extends State<Oneway> {
                 ],
               ),
             ),
-      
+
             SizedBox(height: 10),
-      
+
             //single container third line
             Padding(
-              padding: const EdgeInsets.only(left: 15,right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15),
               child: TravellerAndClass(),
             ),
-      
+
             SizedBox(height: 20),
-      
-            Padding(
-              padding: const EdgeInsets.only(left: 15,right: 15),
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppTheme.primaryColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    "Search Flights",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FlightSearch()),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15),
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppTheme.primaryColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Search Flights",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
             ),
-      
+
             SizedBox(height: 20),
-      
+
             Padding(
               padding: const EdgeInsets.only(left: 15),
               child: DashboardOfferforyou(),
             ),
-      
+
             SizedBox(height: 20),
           ],
         ),

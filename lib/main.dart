@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hotel_booking/core/app_theme.dart';
 import 'package:hotel_booking/feature/flight/screens/flight_home.dart';
+import 'package:hotel_booking/feature/flight/screens/flight_search.dart';
+import 'package:hotel_booking/feature/flight/view_model/flight_search_viewmodel.dart';
 import 'package:hotel_booking/feature/flight/view_model/multicity_viewmodel.dart';
 import 'package:hotel_booking/feature/flight/view_model/oneway_viewmodel.dart';
+import 'package:hotel_booking/feature/flight/widgets/flight_ticket_card.dart';
 import 'package:hotel_booking/screens/all_reviews.dart';
 import 'package:hotel_booking/screens/dashboard.dart';
 import 'package:hotel_booking/screens/login.dart';
@@ -31,6 +34,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => DashboardViewmodel()),
         ChangeNotifierProvider(create: (_) => OnewayViewmodel()),
         ChangeNotifierProvider(create: (_) => MulticityViewmodel()),
+        ChangeNotifierProvider(create: (_) => FlightSearchViewmodel()),
       ],
 
       child: MyApp(),
@@ -57,6 +61,7 @@ class MyApp extends StatelessWidget {
         "/signup": (context) => Signup(),
         "/dashboard": (context) => Dashboard(),
         "/flight_home": (context) => FlightHome(),
+        "/flight_search":(context)=> FlightSearch(),
       },
     );
   }

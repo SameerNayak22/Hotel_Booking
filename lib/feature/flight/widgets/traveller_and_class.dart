@@ -123,7 +123,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                           onTap: () {
                             value.decrement(2);
                           },
-                          child: Icon(Icons.remove),
+                          child: Icon(Icons.remove,color: Colors.grey,),
                         ),
                         Spacer(),
                         Text(
@@ -138,7 +138,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                           onTap: () {
                             value.increment(2);
                           },
-                          child: Icon(Icons.add),
+                          child: Icon(Icons.add,color: Colors.grey,),
                         ),
                       ],
                     ),
@@ -179,7 +179,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                           onTap: () {
                             value.decrement(3);
                           },
-                          child: Icon(Icons.remove),
+                          child: Icon(Icons.remove,color: Colors.grey,),
                         ),
                         Spacer(),
                         Text(
@@ -194,7 +194,7 @@ class _TravellerAndClassState extends State<TravellerAndClass> {
                           onTap: () {
                             value.increment(3);
                           },
-                          child: Icon(Icons.add),
+                          child: Icon(Icons.add,color: Colors.grey,),
                         ),
                       ],
                     ),
